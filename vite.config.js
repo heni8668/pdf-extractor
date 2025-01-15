@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import API_BASE_URL from "./src/config";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -10,7 +11,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/generate": {
-        target: "https://teletemari-ai-content-generation.onrender.com",
+        target: `${API_BASE_URL}`,
         changeOrigin: true,
         secure: false,
       },
