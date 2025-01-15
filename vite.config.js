@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import API_BASE_URL from "./src/config";
+
+// Use Node.js process.env to access environment variables
+// const API_BASE_URL = process.env.VITE_API_URL || "http://localhost:3000";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -11,7 +13,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/generate": {
-        target: `${API_BASE_URL}`,
+        target: "https://teletemari-ai-content-generation.onrender.com",
         changeOrigin: true,
         secure: false,
       },

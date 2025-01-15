@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { getDocument, GlobalWorkerOptions } from "pdfjs-dist";
+// import API_BASE_URL from "./config";
 
 
 // Import the worker explicitly using Vite's worker syntax
@@ -72,7 +73,8 @@ const PdfExtractor = () => {
     }
 
     try {
-      const response = await fetch(`/generate/${questionLimit}`,
+      const response = await fetch(
+        `https://teletemari-ai-content-generation.onrender.com/generate/${questionLimit}`,
         {
           method: "POST",
           headers: {
