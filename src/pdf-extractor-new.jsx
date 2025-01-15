@@ -71,13 +71,16 @@ const PdfExtractor = () => {
     }
 
     try {
-      const response = await fetch(`/generate/${questionLimit}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ text: extractedText }),
-      });
+      const response = await fetch(
+        `https://teletemari-ai-content-generation.onrender.com/generate/${questionLimit}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ text: extractedText }),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
