@@ -1,4 +1,4 @@
-import PdfExtractor from "./pdf-extractor"
+import PdfExtractor from "./pdf-extractor-new"
 
 
 function App() {

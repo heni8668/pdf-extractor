@@ -7,4 +7,13 @@ export default defineConfig({
   optimizeDeps: {
     include: ["pdfjs-dist/build/pdf.worker.min.mjs"],
   },
+  server: {
+    proxy: {
+      "/generate": {
+        target: "https://teletemari-ai-content-generation.onrender.com",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 });
